@@ -1,6 +1,6 @@
 # author: hcjohn463
 #!/usr/bin/env python
-# coding: utf-8
+# coding: utf-8S
 
 # In[1]:
 
@@ -14,8 +14,9 @@ from Crypto.Cipher import AES
 from config import headers
 from crawler import prepareCrawl
 from merge import mergeMp4
-from delete import deleteM3u8, deleteMp4
+from delete import deleteM3u8, deleteMp4, deleteOriMp4
 from cover import get_cover
+from transcode import transcode
 import time
 import cloudscraper
 from args import *
@@ -123,6 +124,8 @@ mergeMp4(folderPath, tsList)
 
 # 刪除子mp4
 deleteMp4(folderPath)
+
+transcode(folderPath)
 
 # In[11]:
 # get cover
